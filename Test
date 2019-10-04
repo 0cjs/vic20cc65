@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+trap 'code=$?; echo 1>&2 ERROR!; exit $code' ERR
+
+die() { code=$1; shift; echo 1>&2 "$@"; exit $code; }
+
+cl65 -t vic20 hello.c -o hello.prg --mapfile map.txt
