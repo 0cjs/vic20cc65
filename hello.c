@@ -14,15 +14,13 @@ int main (void)
     */
 
     unsigned char *pl, *ph, cl, ch, dl, dh;
-    pl = (unsigned char *) 0xD6;
-    ph = (unsigned char *) 0x286;
+    pl = (unsigned char *) 0xF3;
+    ph = (unsigned char *) 0xF4;
 
     cl = *pl; ch = *ph;
     gotoxy(0, 8);
     dl = *pl; dh = *ph;
     cprintf("HelloHelloHelloHello!\r\n");
-    //clrscr();
-    //cprintf("foo\r\n");
 
     cprintf("cl=%02x ch=%02x\r\n", cl, ch);
     cprintf("dl=%02x dh=%02x\r\n", dl, dh);
