@@ -6,7 +6,7 @@ trap 'code=$?; echo 1>&2 ERROR!; exit $code' ERR
 die() { code=$1; shift; echo 1>&2 "$@"; exit $code; }
 
 prog=hello
-#prog=helloworld
+prog=errdemo
 
 cl65 -t vic20 $prog.c -o $prog.prg --mapfile map.txt
 
