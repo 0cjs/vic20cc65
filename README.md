@@ -12,5 +12,11 @@ and then run `Test` to demonstrate the problem. Uncomment one of the
 suggested lines in `errdemo.c` to see it work correctly with a
 workaround.
 
+The minimun workaround is to `cputc('\r')` before you print anything
+else using `conio` on the VIC-20. [cc65 issue #946][946] has further
+discussion of the problem and potential solutions.
+
+
 
 [rc 12492]: https://retrocomputing.stackexchange.com/q/12492/7208
+[946] https://github.com/cc65/cc65/issues/946

@@ -8,6 +8,7 @@ int main (void)
     //clrscr();
     //gotoxy(0, 8);
     //cputs("\r\n");
+    //cputc('\r');        // This is the minimum fix.
 
     cputs("Hi there.\r\n");
     return EXIT_SUCCESS;
