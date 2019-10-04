@@ -6,3 +6,5 @@ trap 'code=$?; echo 1>&2 ERROR!; exit $code' ERR
 die() { code=$1; shift; echo 1>&2 "$@"; exit $code; }
 
 cl65 -t vic20 hello.c -o hello.prg --mapfile map.txt
+
+xvic +confirmexit -logfile xvic.log -autostartprgmode 1 hello.prg
