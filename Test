@@ -15,5 +15,5 @@ cd "$basedir"
 make -C cc65/ -s -j 8
 
 echo "----- Building $prog"
-cc65/bin/cl65 -t vic20 $prog.c -o $prog.prg --mapfile map.txt
+cc65/bin/cl65 -t vic20 $prog.c -o $prog.prg --mapfile $prog.map
 xvic -default +confirmexit -logfile xvic.log -autostartprgmode 1 $prog.prg
