@@ -6,6 +6,7 @@ trap 'code=$?; echo 1>&2 ERROR!; exit $code' ERR
 die() { code=$1; shift; echo 1>&2 "$@"; exit $code; }
 
 prog=hello
+prog=cgetctest
 prog=errdemo
 
 basedir=$(cd "$(dirname "$0")" && pwd -P)
