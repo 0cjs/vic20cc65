@@ -1,0 +1,4 @@
+[submodule "cc65"]
+	path = cc65
+	url = https://github.com/0cjs/cc65.git
+	branch = dev/cjs/191009/vic-conio
