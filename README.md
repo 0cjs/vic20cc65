@@ -13,9 +13,13 @@ The top-level `Test` script will clone the module (if necessary) and
 build cc65 before using it to compile the test program.
 
 Running `Test` will demonstrate that the problem no longer exists. To
-demonstrate the problem before the fix, `(cd cc65 && git reset --hard
-@^)` and re-run `Test`. You can then also one of the suggested lines
-in `errdemo.c` to see it work correctly with a workaround.
+demonstrate the problem before the fix, change to the commit before it:
+
+    #   You may want to confirm the following commit ID in the logs
+    (cd cc65 && git reset --hard 9bd92178)
+
+and re-run `Test`. You can then also one of the suggested lines in
+`errdemo.c` to see it work correctly with a workaround.
 
 The minimun workaround is to `cputc('\r')` before you print anything
 else using `conio` on the VIC-20. [cc65 issue #946][946] has further
