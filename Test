@@ -9,11 +9,15 @@ prog=hello
 prog=cgetctest
 prog=errdemo
 
+target=vic20; emulator=xvic
+#target=c64; emulator=x64
+
 basedir=$(cd "$(dirname "$0")" && pwd -P)
 cd "$basedir"
 [[ -r cc65/Makefile ]] || git submodule update --init
 make -C cc65/ -s -j 8
 
 echo "----- Building $prog"
-cc65/bin/cl65 -t vic20 $prog.c -o $prog.prg --mapfile $prog.map
-xvic -default +confirmexit -logfile xvic.log -autostartprgmode 1 $prog.prg
+cc65/bin/cl65 -t $target $prog.c -o $prog.prg --mapfile $prog.map
+$emulator -default +confirmexit -logfile $emulator.log \
+    -autostartprgmode 1 $prog.prg
