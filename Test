@@ -11,6 +11,7 @@ prog=errdemo
 
 target=vic20; emulator=xvic
 #target=c64; emulator=x64
+#target=plus4; emulator=xplus4
 
 basedir=$(cd "$(dirname "$0")" && pwd -P)
 cd "$basedir"
