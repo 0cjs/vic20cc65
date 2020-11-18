@@ -24,7 +24,7 @@ Running `Test` will demonstrate that the problem no longer exists. To
 demonstrate the problem before the fix, change to the commit before it:
 
     #   You may want to confirm the following commit ID in the logs
-    (cd cc65 && git reset --hard 9bd92178)
+    git -C cc65 reset --hard 9bd92178
 
 and re-run `Test`. You can then also one of the suggested lines in
 `errdemo.c` to see it work correctly with a workaround.
