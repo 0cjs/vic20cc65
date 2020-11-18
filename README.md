@@ -18,16 +18,28 @@ solutions, and [PR #965][965] contains the fix, which was merged on
 This repository includes [0cjs's fork of `cc65`][0cjs-cc65] as a
 submodule, set to the fix on his development branch for this issue.
 The top-level `Test` script will clone the module (if necessary) and
-build cc65 before using it to compile the test program.
+build cc65 before using it to compile the test program. You will need
+to have the VICE emulator's `xvic` program in your path to see the
+results.
 
-Running `Test` will demonstrate that the problem no longer exists. To
-demonstrate the problem before the fix, change to the commit before it:
+Running `Test` will demonstrate that the problem no longer exists; the
+`errdemo.c` program calls `cputs("Hi there.\r\n");` and this is displayed
+when run in the emulator:
+
+<img src="img/fixed.png" width=400>
+
+To demonstrate the problem before the fix, change to the commit before it:
 
     #   You may want to confirm the following commit ID in the logs
     git -C cc65 reset --hard 9bd92178
 
-and re-run `Test`. You can then also one of the suggested lines in
-`errdemo.c` to see it work correctly with a workaround.
+and re-run `Test`. This will show that the text is not displayed when
+running the same program:
+
+<img src="img/broken.png" width=400>
+
+You can then also one of the suggested lines in `errdemo.c` to see it work
+correctly with a workaround.
 
 The minimun workaround is to `cputc('\r')` before you print anything
 else using `conio` on the VIC-20.
