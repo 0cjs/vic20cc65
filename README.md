@@ -28,5 +28,5 @@ discussion of the problem and potential solutions.
 
 
 [rc 12492]: https://retrocomputing.stackexchange.com/q/12492/7208
-[946] https://github.com/cc65/cc65/issues/946
+[946]: https://github.com/cc65/cc65/issues/946
 [0cjs-cc65]: https://github.com/0cjs/cc65
